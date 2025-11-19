@@ -5,9 +5,14 @@ import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import com.example.sunnyweather.logic.Repository
 import com.example.sunnyweather.logic.model.Place
-import retrofit2.http.Query
 
 class PlaceViewModel : ViewModel() {
+
+    fun savePlace(place: Place) = Repository.savePlace(place)
+
+    fun getSavedPlace() = Repository.getSavedPlace()
+
+    fun isPlaceSaved() = Repository.isPlaceSaved()
 
     private val searchLiveData = MutableLiveData<String>()
 
